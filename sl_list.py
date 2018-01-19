@@ -13,44 +13,46 @@ def class SLList:
         self.head = self.tail = None
         self.size = 0
 
-    def get(i):
+    def __str__(self):
+        '''Returns a string representation of an object for printing.
+        '''
+        pass
+
+    def get(self, i):
         '''SL.get(int) -> value
 
-        Returns the value stored at index, i. Returns None if i is an
-        invalid index. Only non-negative indexes are allowed.
+        Returns the value stored at index, i.
+        Returns None if i \notin {0, ..., n-1}.
 
         Runs in O(i) time.
         '''
         pass
 
-    def set(i, x):
+    def set(self, i, x):
         '''SL.set(int, value) -> bool
 
-        Sets the element at index, i, to x and returns True. Does not
-        set and returns False if i is invalid. Only non-negative
-        indexes are allowed.
+        Sets the element at index, i, to x and returns True.
+        Returns False if i \notin {0, ..., n-1}.
 
         Runs in O(i) time.
         '''
         pass
 
-    def add(i, x):
+    def add(self, i, x):
         '''SL.add(int, value) -> bool
 
-        Inserts x at index, i, and returns True. Does not insert x and
-        returns False if i is invalid. Only non-negative indexes are
-        allowed.
+        Inserts x at index, i, and returns True.
+        Returns False if i \notin {0, ..., n-1}.
 
         Runs in O(i) time.
         '''
         pass
 
-    def remove(i):
+    def remove(self, i):
         '''SL.remove(int) -> value
 
-        Removes the element at index, i, and returns it. Returs None
-        if i is an invalid index. Only non-negative indexes are
-        allowed.
+        Removes the element at index, i, and returns it.
+        Returns None if i \notin {0, ..., n-1}.
 
         Runs in O(i) time.
         '''
