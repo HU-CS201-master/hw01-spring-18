@@ -1,4 +1,4 @@
-def class DLNode:
+class DLNode:
     def __init__(self, data):
         self.data = data
         self.front = self.back = None
@@ -8,7 +8,7 @@ def class DLNode:
         '''
         pass
 
-def class DLList:
+class DLList:
     def __init__(self):
         '''Initializes the dummy node and size.'''
         pass

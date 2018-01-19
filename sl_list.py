@@ -1,4 +1,4 @@
-def class SLNode:
+class SLNode:
     def __init__(self, data):
         self.data = data
         self.front = None # can't use "next" - used by python.
@@ -8,7 +8,7 @@ def class SLNode:
         '''
         pass
 
-def class SLList:
+class SLList:
     def __init__(self):
         self.head = self.tail = None
         self.size = 0
