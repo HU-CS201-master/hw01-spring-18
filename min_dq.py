@@ -40,5 +40,3 @@ class MinDeque:
         '''Returns the smallest element currently in the dq.
         '''
         pass
-
-    
