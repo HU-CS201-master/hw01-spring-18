@@ -24,7 +24,7 @@ class SLList:
         Returns the value stored at index, i.
         Returns None if i \notin {0, ..., n-1}.
 
-        Runs in O(i) time.
+        Runs in O(1+i) time.
         '''
         pass
 
@@ -34,7 +34,7 @@ class SLList:
         Sets the element at index, i, to x and returns True.
         Returns False if i \notin {0, ..., n-1}.
 
-        Runs in O(i) time.
+        Runs in O(1+i) time.
         '''
         pass
 
@@ -42,9 +42,9 @@ class SLList:
         '''SL.add(int, value) -> bool
 
         Inserts x at index, i, and returns True.
-        Returns False if i \notin {0, ..., n-1}.
+        Returns False if i \notin {0, ..., n}.
 
-        Runs in O(i) time.
+        Runs in O(1+i) time.
         '''
         pass
 
@@ -54,7 +54,7 @@ class SLList:
         Removes the element at index, i, and returns it.
         Returns None if i \notin {0, ..., n-1}.
 
-        Runs in O(i) time.
+        Runs in O(1+i) time.
         '''
         pass
     

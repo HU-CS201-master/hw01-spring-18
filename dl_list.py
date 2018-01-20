@@ -42,7 +42,7 @@ class DLList:
         '''DL.add(int, value) -> bool
 
         Inserts x at index, i, and returns True.
-        Returns False if i \notin {-n, ... , n-1}.
+        Returns False if i \notin {-n, ... , n}.
 
         Runs in O(1 + min(i, n-i)) time.
         '''
@@ -84,6 +84,6 @@ class DLList:
     def reverse(self):
         '''As described in Exercise 3.12.
 
-        Your code should run in O(n) time and not 
+        Your code should run in O(n) time.
         '''
         pass
