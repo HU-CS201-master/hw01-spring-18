@@ -9,7 +9,7 @@ You have to complete both parts.
 
 Be mindful of _source control etiquette_. Do not add any _automatically generated_ files to your repository. These include: ediotr autosaves, auxiliary LaTeX files, python generated files, and IDE generated files. It is best to list these in your `.gitignore` file so they do not show up in git's listings in the first place.
 
-The homework is due by 19h on Friday, 2 Feb.
+The homework is due by 19h on Monday, 29 Jan.
 
 Post in the [course discussion forum](https://habibedu.facebook.com/groups/376032139504449/) in case of any confusion, queries, or errors.
 
