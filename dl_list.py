@@ -42,7 +42,7 @@ class DLList:
         '''DL.add(int, value) -> bool
 
         Inserts x at index, i, and returns True.
-        Returns False if i \notin {-n, ... , n}.
+        Returns False if i \notin {0, ... , n}.
 
         Runs in O(1 + min(i, n-i)) time.
         '''
@@ -52,7 +52,7 @@ class DLList:
         '''DL.remove(int) -> value
 
         Removes the element at index, i, and returns it.
-        Returs None if i \notin {-n, ... , n-1}.
+        Returs None if i \notin {0, ... , n-1}.
 
         Runs in O(1 + min(i, n-i)) time.
         '''
