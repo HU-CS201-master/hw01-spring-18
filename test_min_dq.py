@@ -1,6 +1,18 @@
 from min_dq import MinDeque
 
-def test_add_remove_first():
+def test_remove_first():
+    dq = MinDeque()
+    dq.add_first(10)
+    dq.add_first(30)
+    dq.add_first(40)
+    assert dq.remove_first() == 40
+    assert dq.remove_first() == 30
+    assert dq.remove_first() == 10
+    assert dq.remove_first() == None
+
+
+
+def test_add_first():
     dq = MinDeque()
     dq.add_first(10)
     assert dq.remove_first() == 10
