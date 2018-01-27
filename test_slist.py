@@ -1,23 +1,23 @@
 from sl_list import SLList
 
-def test_add_get():
+def test_get():
     sllist = SLList()
     assert sllist.add(0, 10) == True
     assert sllist.add(1, 20) == True
     assert sllist.add(1, 15) == True
-    assert sllist.add(4, 40) == False
     assert sllist.get(0) == 10
     assert sllist.get(1) == 15
     assert sllist.get(2) == 20
-    assert sllist.get(3) == False
+    assert sllist.get(3) == None
     
-def test_add_head():
+def test_add():
     sllist = SLList()
     assert sllist.add(0, 100) == True
     assert sllist.add(1, 200) == True
     assert sllist.add(2, 150) == True
     assert sllist.head.data == 100
-    assert sllist.add(0, 250) == False
+    assert sllist.add(0, 250) == True
+    assert sllist.add(6, 300) == False
     assert sllist.head.data == 250
     assert sllist.tail.data == 150
     assert sllist.size == 4
@@ -43,10 +43,10 @@ def test_remove():
     sllist.add(1, 20)
     sllist.add(2, 100)
     sllist.add(3, 40)
-    assert sllist.remove(1) ==20
+    assert sllist.remove(1) == 20
     assert sllist.head.data == 10
-    assert sllist.remove(0) ==10
+    assert sllist.remove(0) == 10
     assert sllist.head.data == 100
-    assert sllist.remove(1) ==40
+    assert sllist.remove(1) == 40
     assert sllist.tail.data == 100
     
