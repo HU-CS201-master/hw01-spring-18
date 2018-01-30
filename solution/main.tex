@@ -1,0 +1,108 @@
+\documentclass[addpoints]{exam}
+
+% Header and footer.
+\pagestyle{headandfoot}
+\runningheadrule
+\runningfootrule
+\runningheader{CS 201 DS II}{Homework 1}{Spring 2018}
+\runningfooter{}{Page \thepage\ of \numpages}{}
+\firstpageheader{}{}{}
+
+\qformat{{\large\bf Exercise \thequestiontitle}\hfill[\totalpoints\ points]}
+\boxedpoints
+\printanswers
+
+\title{Habib University\\CS 201 Data Structures II\\Spring 2018}
+\author{Don't Grade Me}  % replace with your ID, e.g. sh01703
+\date{Homework 1\\Due: 19h, 2 Feb}
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+\titledquestion{2.1*}[10]
+
+The List method {\tt add\textunderscore all(i, c)} inserts all elements of the Collection {\tt c} into the list at position {\tt i}. (The {\tt add(i, x)} method is a special case where {\tt c = \{x\}}.)
+
+Explain why, for the data structures in Chapter 2, it is not efficient to implement {\tt add\textunderscore all(i,c)} by repeated calls to {\tt add(i, x)}. Design a more efficient implementation.
+\begin{solution}
+  Let the size of the List be $n$ and of the collection, $m$. Each {\tt add} is an $O(n)$ operation. Adding every element of {\tt c} thus takes $O(mn)$ time. A more efficient way would be to allocate sufficent memory and copy the elements from the List and $c$ to it. This would take $O(m+n)$ time.
+\end{solution}
+
+\titledquestion{2.4*}[5]
+
+Design a method {\tt rotate(a,r)} that ``rotates'' the array {\tt a} so that {\tt a[i]} moves to {\tt a[(i + r) mod length(a)], for all i $\in$ \{0, ... ,  length(a)\}}.
+\begin{solution}
+  % Write your solution here
+\end{solution}
+
+\titledquestion{2.5*}[5]
+
+Design a method {\tt rotate(r)} that ``rotates'' a List so that list item $i$ becomes list item $(i + r) \bmod n$. When run on an ArrayDeque, or a DualArrayDeque, {\tt rotate(r)} should run in $O(1 + \min{r, n-r})$ time.
+\begin{solution}
+  % Write your solution here
+\end{solution}
+
+\titledquestion{2.8*}[10]
+
+Design a variant of ArrayDeque that does not do any modular arithmetic at all. Instead, all the data sits in a consecutive block, in order, inside an array. When the data overruns the beginning or the end of this array, a modified {\tt rebuild()} operation is performed. The amortized cost of all operations should be the same as in an ArrayDeque.
+
+{\it Hint}: Getting this to work is really all about how you implement the {\tt rebuild()} operation. You would like {\tt rebuild()} to put the data structure into a state where the data cannot run off either end until at least $n/2$ operations have been performed.
+\begin{solution}
+  % Write your solution here
+\end{solution}
+
+\titledquestion{3.1}[10]
+
+Why is it not possible to use a dummy node in an SLList to avoid all the special cases that occur in the operations {\tt push(x), pop(), add(x)}, and {\tt remove()}?
+\begin{solution}
+  % Write your solution here
+\end{solution}
+
+\titledquestion{3.2*}[5]
+
+Design an SLList method, {\tt second\textunderscore last()}, that returns the second-last element of an SLList. Do this without using the member variable, $n$, that keeps track of the size of the list.
+\begin{solution}
+  Starting at {\tt head}, keep traversing the list until you arrive at a node whose {\tt front} is {\tt tail}.
+\end{solution}
+
+\titledquestion{3.4*}[5]
+
+Design an SLList method, {\tt reverse()} that reverses the order of elements in an SLList. This method should run in $O(n)$ time, should not use recursion, should not use any secondary data structures, and should not create any new nodes.
+\begin{solution}
+  The solution for sizes $\leq$ 2 is trivial and can be hardcoded. For other sizes,
+  \begin{verbatim}
+    current, next1, next2 = head, head.front, head.front.front
+    tail = head
+    Repeat until next2 != NULL:
+      next1.front = current
+      current, next1, next2 = next1, next2, next2.front
+    next1.front = current
+    head = next1
+\end{verbatim}
+\end{solution}
+
+\titledquestion{3.8*}[5]
+
+Design a method {\tt rotate(r)} that ``rotates'' a DLList so that list item $i$ becomes list item $(i + r) \bmod n$. This method should run in $O(1 + \min\{r, n-r\})$ time and should not modify any nodes in the list.
+\begin{solution}
+  This can be achieved by changing the position of {\tt dummy} in the list. Depending on which is smaller, the new position of {\tt dummy} would be found by following the {\tt back} links $r$ number of times, or the {\tt front} links $n-r$ number of times. To ensure that $r$ is within bounds, $r$ should first be updated to $(r\bmod n)$.
+\end{solution}
+
+\titledquestion{3.19* (challenge)}[0]
+
+Show using pseudocode how the bitwise exclusive-or operator, \^{}, can be used to swap the values of two {\tt int} variables without using a third variable.
+\begin{solution} The key observation is that {\tt a\^{}a=0} and {\tt a\^{}0=a}. Thus, {\tt a\^{}a\^{}b=b}.
+  
+  \begin{texttt}
+    x = x \^{} y\\
+    y = x \^{} y\\
+    x = x \^{} y
+  \end{texttt}
+\end{solution}
+\end{questions}
+
+\noindent* - The question has been modified from the one in the book to exclude implementation. ``Design'' in a question here means to write pseudocode.
+
+\end{document}
